@@ -1,6 +1,6 @@
-import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import session from 'express-session';
 import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
@@ -76,7 +76,8 @@ class App {
         key: 'sid',
         secret: '@fessport',
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
+        proxy: true,
         cookie: {
           sameSite: 'None',
           httpOnly: true,
