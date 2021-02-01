@@ -7,6 +7,33 @@ import { RequestWithUser } from '../interfaces/auth.interface';
 class FestivalsController {
   public festivalService = new festivalService();
 
+  public getFestivalBySearchId = async (req: Request, res: Response, next: NextFunction) => {
+    const { search } = req.query;
+
+    try {
+      const findFestivalBySearchId = await this.festivalService.findOneFestivalBySearchId(search);
+      res.status(200).json(findFestivalBySearchId);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public getFestivalByCountryGenreID = async (req: Request, res: Response, next: NextFunction) => {
+    const { countryId, genreId, offset, limit } = req.query;
+
+    try {
+      const findFestivalsData: Festival[] = await this.festivalService.findFestivalByCountryGenreId(
+        genreId,
+        countryId,
+        offset,
+        limit,
+      );
+      res.status(200).json(findFestivalsData);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   public getFestivals = async (req: Request, res: Response, next: NextFunction) => {
     const { offset, limit } = req.query;
 

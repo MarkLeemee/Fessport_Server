@@ -14,7 +14,8 @@ class ArtistsRoute implements Route {
 
   private initializeRoutes() {
     this.router.get(`${this.path}/list`, (req: Request, res: Response, next: NextFunction) => {
-      if (req.query.genreId) this.artistsController.getArtistByGenreId(req, res, next);
+      if (req.query.search) this.artistsController.getArtistBySearchId(req, res, next);
+      else if (req.query.genreId) this.artistsController.getArtistByGenreId(req, res, next);
       else this.artistsController.getArtists(req, res, next);
     });
     this.router.get(`${this.path}/detail/:id`, authMiddleware, this.artistsController.getArtistDetailById);
