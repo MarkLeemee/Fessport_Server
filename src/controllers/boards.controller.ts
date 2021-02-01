@@ -1,7 +1,7 @@
 import { RequestWithUser } from '../interfaces/auth.interface';
 import { NextFunction, Request, Response } from 'express';
 import { Board } from '../interfaces/boards.interface';
-import { Festival } from '../interfaces/festivals.interface';
+// import { Festival } from '../interfaces/festivals.interface';
 import { User } from '../interfaces/users.interface';
 import boardService from '../services/boards.service';
 

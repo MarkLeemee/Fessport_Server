@@ -1,5 +1,6 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import session from 'express-session';
 import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
@@ -70,6 +71,20 @@ class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
+    this.app.use(
+      session({
+        key: 'sid',
+        secret: '@fessport',
+        resave: false,
+        saveUninitialized: false,
+        proxy: true,
+        cookie: {
+          sameSite: 'None',
+          httpOnly: true,
+          secure: true,
+        },
+      }),
+    );
   }
 
   private initializeRoutes(routes: Routes[]) {

@@ -7,7 +7,6 @@ import userModel from '../models/users.model';
 const authMiddleware = async (req: RequestWithUser, res: Response, next: NextFunction) => {
   try {
     const cookies = req.cookies; // request user의 cookie
-
     // cookie 인증
     if (cookies && cookies.Authorization) {
       const secret = process.env.JWT_SECRET;
