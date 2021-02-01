@@ -47,7 +47,7 @@ class UserService {
   public async findFessport(userId: string): Promise<User> {
     const fessport: User = await this.users
       .findOne({ _id: userId }, 'email nickname image visits badge')
-      .populate('visits', 'poster');
+      .populate('visits', 'stamp');
 
     const { _id, email, nickname, image, visits, badge } = fessport;
     const findFessport = { _id, email, nickname, image, visits, badge: [] };

@@ -53,6 +53,7 @@ class AuthController {
 
     try {
       const { cookie, findUser } = await this.authService.login(userData); // services의 login 함수를 통해 cookie와 user 정보를 받아온다.
+      //res.cookie('Authorization', cookie).sendStatus(200);
       res.setHeader('Set-Cookie', [cookie]);
       res.status(200).json(findUser);
     } catch (error) {
@@ -174,6 +175,7 @@ class AuthController {
 
     try {
       const logOutUserData: User = await this.authService.logout(userData);
+      //res.clearCookie('Authorization').sendStatus(200);
       res.setHeader('Set-Cookie', ['Authorization=; Max-age=0']);
       res.status(200).json(logOutUserData);
     } catch (error) {

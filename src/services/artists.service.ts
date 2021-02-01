@@ -7,13 +7,23 @@ import HttpException from '../exceptions/HttpException';
 class ArtistService {
   public artists = artistModel;
 
+  public async findOneArtistBySearchId(searchId): Promise<Artist> {
+    if (isEmpty(searchId)) throw new HttpException(400, 'error');
+
+    const artist: Artist = await this.artists
+      .findById(searchId, 'name image description genre')
+      .populate('genre', 'name');
+    if (!artist) throw new HttpException(409, 'error');
+    return artist;
+  }
+
   public async findAllArtist(offset?, limit?): Promise<Artist[]> {
     const artists: Artist[] = await this.artists.find({}, 'name image description genre').populate('genre', 'name');
     if (isEmpty(artists)) throw new HttpException(400, 'error');
     const total = artists.length;
 
     if (offset && limit) {
-      const skip = Number(offset) * Number(limit);
+      const skip = Number(offset);
       const findLimitArtists: Artist[] = await this.artists
         .find({}, 'name image description genre')
         .populate('genre', 'name')
@@ -42,7 +52,7 @@ class ArtistService {
     const total = findArtists.length;
 
     if (offset && limit) {
-      const skip = Number(offset) * Number(limit);
+      const skip = Number(offset);
       const findLimitArtists: Artist[] = await this.artists
         .find({ genre: genreId }, 'name image description genre')
         .populate('genre', 'name')

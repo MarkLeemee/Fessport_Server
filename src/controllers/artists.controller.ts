@@ -7,6 +7,17 @@ import { RequestWithUser } from '../interfaces/auth.interface';
 class ArtistsController {
   public artistService = new ArtistService();
 
+  public getArtistBySearchId = async (req: Request, res: Response, next: NextFunction) => {
+    const { search } = req.query;
+
+    try {
+      const findArtistBySearchId: Artist = await this.artistService.findOneArtistBySearchId(search);
+      res.status(200).json(findArtistBySearchId);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   public getArtists = async (req: Request, res: Response, next: NextFunction) => {
     const { offset, limit } = req.query;
 
