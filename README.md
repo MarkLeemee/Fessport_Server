@@ -28,7 +28,7 @@ Fessport를 통해 전 세계를 여행 다니며 페스티벌을 즐겨보세�
                                                                               
 ### 🎈Fessport는 이렇게 만들어졌습니다!
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc7b5a833-2be2-465e-b0df-8561016d0101%2FUntitled.png?table=block&id=fd81db38-305b-4c97-b032-46c68f450c62&width=3580&userId=c83eba92-4410-44db-b4ab-38fd609f66a3&cache=v2)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6639513e-b11e-457d-94e1-8e5f76e08c0d/_2021-02-19__2.18.15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210219T052904Z&X-Amz-Expires=86400&X-Amz-Signature=bb463d82e1bf92cbe9d4e2e5b8cda24b9e6e0b622654bb2943bd9bd786896d6f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2021-02-19__2.18.15.png%22)
 
 ## Wiki
 
