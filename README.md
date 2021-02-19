@@ -32,4 +32,4 @@ Fessport를 통해 전 세계를 여행 다니며 페스티벌을 즐겨보세�
 
 ## Wiki
 
-[Go to see Wiki !](https://github.com/codestates/Mentor-To-Mentee-client/wiki)
+[Go to see Wiki !](https://github.com/codestates/Fessport_Server/wiki)
